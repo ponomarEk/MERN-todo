@@ -21,13 +21,13 @@ const generateTokens = (payload: IUserDto): Tokens => {
 };
 
 const saveTokens = async (userId: IUserDto['id'], refreshToken: string) => {
-	const tokenData = await TokenModel.findOne({ user: userId });
+	const tokenData = await TokenModel.findOne({ userId });
 	if (tokenData) {
 		tokenData.refreshToken = refreshToken;
 		return tokenData.save();
 	}
 
-	const token = await TokenModel.create({ user: userId, refreshToken });
+	const token = await TokenModel.create({ userId, refreshToken });
 	return token;
 };
 

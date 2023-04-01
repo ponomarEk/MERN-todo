@@ -3,7 +3,11 @@ import { model, Schema } from 'mongoose';
 import { ITokens } from '../shared/types/Tokens';
 
 const TokenSchema = new Schema<ITokens>({
-	user: { type: Schema.Types.ObjectId, ref: 'User' },
+	userId: {
+		type: String,
+		required: true,
+		index: true,
+	},
 	refreshToken: { type: String, required: true },
 });
 

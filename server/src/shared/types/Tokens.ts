@@ -1,7 +1,5 @@
-import { Schema } from 'mongoose';
-
 export interface ITokens {
-	user: Schema.Types.ObjectId;
+	userId: string;
 	refreshToken: string;
 }
 

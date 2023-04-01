@@ -11,16 +11,19 @@ export const validateRequest = (req: Request) => {
 	return null;
 };
 
-// POST /v1/auth/login
+// POST /api/auth/login
 export const login = [
 	body('email').isEmail().trim().toLowerCase().notEmpty(),
 	body('password').isString().notEmpty(),
 ];
 
-// POST /v1/auth/registration
+// POST /api/auth/registration
 export const registration = [
 	body('email').isEmail().trim().toLowerCase().notEmpty(),
 	body('password').isString().isLength({ min: 8, max: 32 }),
 	body('firstName').isString().trim().notEmpty(),
 	body('lastName').isString().trim().notEmpty(),
 ];
+
+// POST /api/todos/
+export const addTodo = [body('description').notEmpty()];

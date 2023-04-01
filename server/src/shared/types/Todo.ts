@@ -1,7 +1,5 @@
-// import { Schema } from 'mongoose';
-
-// export interface ITodo {
-// 	userId: Schema.Types.ObjectId;
-// 	description: string;
-// 	isCompleted: boolean;
-// }
+export interface ITodo {
+	userId: string;
+	description: string;
+	isCompleted?: boolean;
+}
